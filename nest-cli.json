@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/realtime-chatapp/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/realtime-chatapp/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/realtime-chatapp",
+  "projects": {
+    "api": {
+      "type": "application",
+      "root": "apps/api",
+      "entryFile": "main",
+      "sourceRoot": "apps/api/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/api/tsconfig.app.json"
+      }
+    },
+    "auth": {
+      "type": "library",
+      "root": "libs/auth",
+      "entryFile": "index",
+      "sourceRoot": "libs/auth/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/auth/tsconfig.lib.json"
+      }
+    },
+    "db": {
+      "type": "library",
+      "root": "libs/db",
+      "entryFile": "index",
+      "sourceRoot": "libs/db/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/db/tsconfig.lib.json"
+      }
+    },
+    "message": {
+      "type": "library",
+      "root": "libs/message",
+      "entryFile": "index",
+      "sourceRoot": "libs/message/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/message/tsconfig.lib.json"
+      }
+    },
+    "realtime-chatapp": {
+      "type": "application",
+      "root": "apps/realtime-chatapp",
+      "entryFile": "main",
+      "sourceRoot": "apps/realtime-chatapp/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/realtime-chatapp/tsconfig.app.json"
+      }
+    },
+    "websocket": {
+      "type": "application",
+      "root": "apps/websocket",
+      "entryFile": "main",
+      "sourceRoot": "apps/websocket/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/websocket/tsconfig.app.json"
+      }
+    },
+    "worker": {
+      "type": "application",
+      "root": "apps/worker",
+      "entryFile": "main",
+      "sourceRoot": "apps/worker/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/worker/tsconfig.app.json"
+      }
+    }
+  }
+}
